@@ -332,11 +332,13 @@ section{
    border-bottom-right-radius: 15px;
 }
 
-.header .flex{
-   position: relative;
+.header .flex {
    display: flex;
    align-items: center;
    justify-content: space-between;
+   flex-wrap: nowrap; /* Prevent wrapping */
+   width: 100%;
+   padding: 10px 20px;
 }
 
 .header .flex .logo{
@@ -919,33 +921,33 @@ section{
 
 
 /* style Dark and light */
-.style-switcher{
-   position: fixed;
-   right: 0;
+.style-switcher {
+   position: left;
+   left: 0;
    top: 60px;
-   padding: 15px;
-   width: 200px;
-   border: 1px solid var(--light-white);
-   background: var(--white);
+   width: auto; /* Prevent extra width */
+   height: auto; /* Prevent unnecessary height */
+   padding: 0;
+   background: transparent; /* Make it invisible */
+   border: none; /* Remove border */
    z-index: 101;
-   border-radius: 5px;
    transition: all 0.3s ease;
-   transform: translateX(100%);
+   transform: none; /* Remove animation effect */
 }
-.style-switcher .s-icon{
-   position: absolute;
+
+.style-switcher .s-icon {
+   top: 15px; /* Adjust position */
    height: 40px;
    width: 40px;
    text-align: center;
    font-size: 20px;
    background: var(--white);
    color: var(--black);
-   right: 100%;
    border: 1px solid var(--light-white);
-   margin-right: 25px; 
+   border-radius: 50%;
    cursor: pointer;
    transition: all 0.3s ease;
-   border-radius: 50%;
+   line-height: 40px;
 }
 .style-switcher .s-icon{
    line-height: 40px;
@@ -957,6 +959,57 @@ section{
    top: 55px;
 }
 
+.navbar {
+   display: flex;
+   flex-wrap: nowrap;
+   gap: 10px;
+   flex-grow: 0.5; /* Allow navbar to take available space */
+   justify-content: flex-start; /* Align to left */
+}
+
+.navbar a {
+   white-space: nowrap;
+   text-decoration: none;
+   color: var(--black);
+   font-weight: bold;
+   font-size: 14px;
+   padding: 5px 8px;
+}
+
+
+/* Dark Mode Button Inside Navbar */
+.day-night {
+   width: 40px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: var(--black);
+   color: var(--white);
+   border-radius: 50%;
+   cursor: pointer;
+   margin-left: 15px; /* Space between text and icon */
+}
+
+/* Dark Mode Icon */
+.day-night i {
+   font-size: 20px;
+}
+
+/* Dark Mode Toggle */
+.dark-mode .header {
+   background: var(--black);
+}
+
+.dark-mode .navbar a {
+   color: var(--white);
+}
+
+.dark-mode .day-night {
+   background: var(--black);
+   color: var(--white);
+   border-color: var(--white);
+}
 
 
 
