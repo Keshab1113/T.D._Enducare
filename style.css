@@ -764,7 +764,12 @@ section {
 }
 
 .social-sharing {
-   margin-top: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: start;
+   flex-direction: column;
+   gap: 10px;
+   position: relative;
 }
 
 .contact-us {
@@ -773,14 +778,28 @@ section {
 }
 
 .social-sharing a {
-   margin: 0px 10px;
    color: white;
    text-decoration: none;
    display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   position: relative;
 }
 
-.social-sharing a:hover {
-   text-decoration: underline;
+.social-icon i::after {
+   content: "";
+   width: 0%;
+   height: 2px;
+   background-color: white;
+   position: absolute;
+   bottom: 0;
+   left: 5%;
+   transition: width 0.5s linear;
+}
+
+.social-sharing a:hover.social-icon i::after {
+   width: 100%;
 }
 
 .social-icon {
