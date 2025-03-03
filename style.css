@@ -354,17 +354,13 @@ section {
 }
 
 
-.header .flex .navbar a {
+.header .flex {
    padding: 0.9rem;
    color: var(--light-white);
    font-size: 1.8rem;
 }
 
-.header .flex .navbar a:hover {
-   background-color: rgba(154, 139, 139, 0.857);
-   color: rgb(233, 220, 220);
-   border-radius: 35px;
-}
+
 
 #menu-btn {
    cursor: pointer;
@@ -746,10 +742,22 @@ section {
 .sec-nav a {
    color: white;
    text-decoration: none;
+   position: relative;
 }
 
-.sec-nav a:hover {
-   text-decoration: underline;
+.sec-nav a::after {
+   content: "";
+   height: 2px;
+   width: 0%;
+   background-color: white;
+   position: absolute;
+   left: 0;
+   bottom: -5px;
+   transition: width 0.5s linear;
+}
+
+.sec-nav a:hover::after {
+   width: 100%;
 }
 
 #subscribeForm {
@@ -761,6 +769,16 @@ section {
 .quick-contact {
    text-align: left;
    margin: 20px;
+}
+
+.quick-contact ul {
+   margin-top: 10px;
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   align-items: start;
+   flex-direction: column;
+   gap: 10px;
 }
 
 .social-sharing {
@@ -1000,19 +1018,36 @@ section {
 .navbar {
    display: flex;
    flex-wrap: nowrap;
-   gap: 10px;
+   gap: 28px;
    justify-content: center;
+   align-items: center;
+
+
 }
 
 .navbar a {
    white-space: nowrap;
    text-decoration: none;
-   color: var(--black);
    font-weight: bold;
-   font-size: 14px;
-   padding: 5px 8px;
+   font-size: 1.8rem;
+   position: relative;
+   color: var(--light-white);
 }
 
+.navbar a::after {
+   content: "";
+   height: 2px;
+   width: 0%;
+   background-color: white;
+   position: absolute;
+   left: 0;
+   bottom: -5px;
+   transition: width 0.5s linear;
+}
+
+.navbar a:hover::after {
+   width: 100%;
+}
 
 /* Dark Mode Button Inside Navbar */
 .day-night {
