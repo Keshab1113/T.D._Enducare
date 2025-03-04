@@ -721,6 +721,8 @@ section {
    padding: 5px 20px;
    text-align: center;
    font-size: medium;
+   border-top-left-radius: 50px;
+   border-top-right-radius: 50px;
 }
 
 .wrapper {
@@ -1272,4 +1274,35 @@ section {
    .tabletItem {
       display: none;
    }
+}
+
+
+/* Color picker styling */
+.color-btn{
+   padding: 5px;
+   margin-left: 20px;
+   border-radius: 8px;
+   border: 1px solid #ccc;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+.color-btn:hover {
+   background-color: #f0f0f0;
+}
+
+/* color */
+.red-theme {
+   background-color: #ffcccc;
+   color: #800000;
+}
+
+.green-theme {
+   background-color: #ccffcc;
+   color: #006600;
+}
+
+.orange-theme {
+   background-color: #ffe6cc;
+   color: #cc6600;
 }

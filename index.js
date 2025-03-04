@@ -165,3 +165,36 @@ document.addEventListener('DOMContentLoaded', () => {
     revealOnScroll.observe(section);
   });
 });
+
+
+// Color change
+// Get the select element
+const colorSelect = document.getElementById('color');
+
+// Function to change theme
+function changeTheme(color) {
+  // Remove all previous theme classes
+  document.body.classList.remove('red-theme', 'green-theme', 'orange-theme');
+
+  // Add new theme class if a valid color is selected
+  if (color && color !== 'null') {
+    document.body.classList.add(`${color}-theme`);
+  }
+}
+
+// Event listener for color selection
+colorSelect.addEventListener('change', (event) => {
+  const selectedColor = event.target.value;
+  changeTheme(selectedColor);
+
+  // Optional: Save the selection to localStorage
+  localStorage.setItem('selectedTheme', selectedColor);
+});
+
+// Optional: Load saved theme on page load
+window.addEventListener('load', () => {
+  const savedTheme = localStorage.getItem('selectedTheme');
+  if (savedTheme) {
+    colorSelect.value = savedTheme;
+    changeTheme(savedTheme);
+  }})
